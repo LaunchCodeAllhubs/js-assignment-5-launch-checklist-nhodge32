@@ -1,8 +1,6 @@
 // Write your JavaScript code here!
 
 window.addEventListener("load", function() {
-    
-    const missionTarget = document.getElementById("missionTarget");
 
     let listedPlanets;
     let listedPlanetsResponse = myFetch();
@@ -12,7 +10,7 @@ window.addEventListener("load", function() {
     }).then(function () {
         console.log(listedPlanets);
         let destinationPlanet = listedPlanets[pickPlanet(listedPlanets)];
-        addDestinationInfo(missionTarget, destinationPlanet.name, destinationPlanet.diameter, destinationPlanet.star, destinationPlanet.distance, destinationPlanet.moons, destinationPlanet.image);
+        addDestinationInfo(document, destinationPlanet.name, destinationPlanet.diameter, destinationPlanet.star, destinationPlanet.distance, destinationPlanet.moons, destinationPlanet.image);
     })
 
     window.addEventListener("submit", function(e) {
